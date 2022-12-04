@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/02 19:57:57 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/12/02 20:51:12 by alalmazr         ###   ########.fr       */
+/*   Created: 2022/12/04 17:27:46 by alalmazr          #+#    #+#             */
+/*   Updated: 2022/12/04 18:05:43 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <string>
 
-void	megaphone(int size, char **str)
-{
-	for (int i = 1; i < size; i++)
-	{
-		std::string s(str[i]);
+class Contact {
+	public:
+	char *f_name;
+	char *l_name;
+	char *nickname;
+	char *phone_number;
+	char *secret;
+};
 
-		for (int j = 0; j < s.length(); j++)
-			std::cout << (char)toupper(s[j]);
-		std::cout << " ";
-	}
-	std::cout << std::endl;
-}
+class PhoneBook {
+	public:
+	Contact contacts[8];
 
-int main(int argc, char **argv)
-{
-	if (argc < 2)
-	{
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-		return 0;
-	}
-	megaphone(argc, argv);
-	return 0;
-}	
+};
