@@ -1,6 +1,6 @@
-NAME = phonebook
+NAME = zombie
 
-FILES = PhoneBook.cpp Contacts.cpp main.cpp
+FILES = Zombie.cpp newZombie.cpp randomChump.cpp main.cpp
 
 OBJ = $(FILES:.cpp=.o)
 

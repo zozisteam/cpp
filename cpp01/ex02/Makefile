@@ -1,6 +1,6 @@
-NAME = phonebook
+NAME = str
 
-FILES = PhoneBook.cpp Contacts.cpp main.cpp
+FILES = main.cpp
 
 OBJ = $(FILES:.cpp=.o)
 

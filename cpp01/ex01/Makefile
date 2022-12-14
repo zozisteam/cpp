@@ -1,6 +1,6 @@
-NAME = phonebook
+NAME = zombiehorde
 
-FILES = PhoneBook.cpp Contacts.cpp main.cpp
+FILES = Zombie.cpp zombieHorde.cpp main.cpp
 
 OBJ = $(FILES:.cpp=.o)
 
