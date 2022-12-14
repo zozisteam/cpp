@@ -6,39 +6,32 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 15:47:15 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/12/13 16:13:48 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/12/14 16:01:43 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string>
 #include <iostream>
+#include "HumanA.hpp"
+#include "HumanB.hpp"
+#include "Weapon.hpp"
 
-
-
-
-
-class HumanB {
-private:
-    Weapon* weapon;
-    std::string name;
-public:
-    HumanB(const std::string& name) : name(name), weapon(nullptr) {}
-
-    void setWeapon(const std::string& weaponType) { 
-        if (weapon == nullptr) { 
-            weapon = new Weapon(); 
-        } 
-
-        weapon->setType(weaponType); 
-    }
-
-    void attack() const { 
-        if (weapon == nullptr) { 
-            std::cout << name << " attacks with their bare hands" << std::endl; 
-        } else { 
-            std::cout << name << " attacks with their " << weapon->getType() << std::endl; 
-        } 
-    }
-
-    ~HumanB() { delete weapon; } // destructor to free up memory allocated for the weapon pointer. 
-};
+int main()
+{
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
+	}
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
+	return (0);
+}
