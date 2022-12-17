@@ -6,16 +6,16 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 15:16:46 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/12/14 15:54:17 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/12/17 16:45:53 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
-HumanB::HumanB(const std::string &name)
+HumanB::HumanB(std::string name)
 {
 	this->name = name;
-	this->weapon = nullptr;
+	this->weapon->setType("bare hands");
 }
 
 HumanB::~HumanB()
@@ -23,16 +23,12 @@ HumanB::~HumanB()
 	delete weapon;
 }
 
-void HumanB::setWeapon(const std::string &weaponType)
+void HumanB::setWeapon(Weapon weapon)
 {
-	if (weapon == nullptr)
-	{
-		weapon = new Weapon();
-	}
-	this->weapon->setType(weaponType);
+	this->weapon = &weapon;
 }
 
-void HumanB::attack() const
+void HumanB::attack()
 {
 	if (weapon == nullptr)
 	{
