@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 16:06:17 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/12/17 16:39:14 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/12/18 20:29:29 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Weapon::Weapon(std::string type)
 
 Weapon::~Weapon(){}
 
- const std::string &Weapon::getType() const
+const std::string &Weapon::getType() const
 {
 	return (this->type);
 }
