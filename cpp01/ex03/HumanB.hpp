@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 15:05:04 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/12/14 15:53:27 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/12/16 12:44:55 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ private:
 public:
     HumanB(const std::string& name);
     ~HumanB();
-    void setWeapon(const std::string& weaponType);
+    void setWeapon(Weapon weapon);
     void attack() const;
 };

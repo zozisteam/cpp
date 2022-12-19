@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 15:16:46 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/12/14 15:54:17 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/12/16 12:45:46 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,9 @@ HumanB::~HumanB()
 	delete weapon;
 }
 
-void HumanB::setWeapon(const std::string &weaponType)
+void HumanB::setWeapon(Weapon weapon)
 {
-	if (weapon == nullptr)
-	{
-		weapon = new Weapon();
-	}
-	this->weapon->setType(weaponType);
+	this->weapon = &weapon;
 }
 
 void HumanB::attack() const
