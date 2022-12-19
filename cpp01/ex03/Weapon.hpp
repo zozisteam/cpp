@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 16:07:31 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/12/16 09:48:29 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/12/19 09:09:18 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ private:
     std::string type;
 public:
     Weapon();
-	Weapon(const std::string type);
+	Weapon(std::string type);
 	~Weapon();
     const std::string &getType() const;
-    void setType(const std::string& type);
+    void setType(std::string type);
 };
 
 

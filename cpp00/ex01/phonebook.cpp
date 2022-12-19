@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 11:27:37 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/12/07 16:30:53 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/12/17 17:39:00 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,12 @@ void PhoneBook::phoneBookSearch()
 	std::cout << "enter contact index" << std::endl;
 	std::cout << ": ";
 	std::cin >> index;
+	if (std::cin.fail())
+	{
+		std::cout << "not following the rules destroys your phonebook :)" << std::endl;
+		phoneBookExit();
+		exit(0);
+	}
 	if (index > 8 || index < 1)
 		std::cout << "error.. no such contact" << std::endl;
 	else
