@@ -1,6 +1,6 @@
 NAME = harl
 
-FILES = main.cpp
+FILES = main.cpp Harl.hpp Harl.cpp
 
 OBJ = $(FILES:.cpp=.o)
 

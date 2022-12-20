@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 09:23:56 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/12/20 10:15:59 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/12/20 19:55:13 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int main() {
 	std::string level;
 
 
-	std::cout << "input level: " << std::endl;
-	std::cin >> level;
-	harl.complain(level);
+	// std::cout << "input level: " << std::endl;
+	// std::cin >> level;
+	// harl.complain(level);
 
 	//-----------------
 	std::cout << "displaying all levels:" << std::endl;
