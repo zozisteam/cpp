@@ -6,11 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 16:06:17 by alalmazr          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2022/12/16 12:49:11 by alalmazr         ###   ########.fr       */
-=======
-/*   Updated: 2022/12/18 20:29:29 by alalmazr         ###   ########.fr       */
->>>>>>> 9a06e130610880ece9939af18f2af0d07cee3d16
+/*   Updated: 2022/12/19 10:15:28 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +16,14 @@ Weapon::Weapon(){}
 
 Weapon::Weapon(std::string type)
 {
+	// std::cout << "weap constructor called" << std::endl;
 	this->setType(type);
 }
 
-Weapon::~Weapon(){}
+Weapon::~Weapon()
+{
+	// std::cout << "weap destructor called" << std::endl;
+}
 
 const std::string &Weapon::getType() const
 {

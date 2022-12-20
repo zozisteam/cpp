@@ -5,34 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/13 15:47:15 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/12/19 10:17:55 by alalmazr         ###   ########.fr       */
+/*   Created: 2022/12/20 09:23:56 by alalmazr          #+#    #+#             */
+/*   Updated: 2022/12/20 10:15:59 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
-#include <iostream>
-#include "HumanA.hpp"
-#include "HumanB.hpp"
-#include "Weapon.hpp"
+#include "Harl.hpp"
 
-int main()
-{
-	{
-		Weapon club = Weapon("crude spiked club");
-		HumanA bob("Bob", club);
-		bob.attack();
-		club.setType("some other type of club");
-		bob.attack();
-	}
-	{
-		Weapon club = Weapon("crude spiked club");
-		HumanB jim("Jim");
-		jim.attack();
-		jim.setWeapon(club);
-		jim.attack();
-		club.setType("some other type of club");
-		jim.attack();
-	}
-	return (0);
+// Tests 
+int main() { 
+
+    Harl harl; 
+	std::string level;
+
+
+	std::cout << "input level: " << std::endl;
+	std::cin >> level;
+	harl.complain(level);
+
+	//-----------------
+	std::cout << "displaying all levels:" << std::endl;
+	//-----------------
+    harl.complain("debug");  // Outputs: Debugging... 
+    harl.complain("info");   // Outputs: Informing... 
+    harl.complain("warning");// Outputs: Warning... 
+    harl.complain("error");  // Outputs: Erroring... 
+
+    return 0; 
 }

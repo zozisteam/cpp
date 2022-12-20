@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.cpp                                         :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 15:16:46 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/12/19 10:17:09 by alalmazr         ###   ########.fr       */
+/*   Created: 2022/12/20 09:25:03 by alalmazr          #+#    #+#             */
+/*   Updated: 2022/12/20 11:13:41 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanB.hpp"
+#ifndef HARL_H
+# define HARL_H
 
-HumanB::HumanB(std::string name)
-{
-	this->name = name;
-	this->weapon = NULL;
-}
+#include <iostream>
+#include <string>
 
-HumanB::~HumanB()
-{}
+class Harl {
+private:
+    void debug( void );
+    void info( void );
+    void warning( void );
+    void error( void );
+public:
+	Harl();
+	~Harl();
+    void complain( std::string level );
+};
 
-void HumanB::setWeapon(Weapon &weapon)
-{
-	this->weapon = &weapon;
-}
-
-void HumanB::attack()
-{
-	if (this->weapon == NULL)
-		std::cout << name << " attacks with their bare hands" << std::endl;	
-	else
-		std::cout << name << " attacks with their " << weapon->getType() << std::endl;
-}
+#endif
