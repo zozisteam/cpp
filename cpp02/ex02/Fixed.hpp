@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 11:33:55 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/12/26 15:15:13 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/12/27 15:28:42 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,22 +25,27 @@ private:
 	static const int fractionalBits = 8;
 
 public:
+
+	//orthodox canonical form
+	//default constructor
 	Fixed();
+	//copy constructor
 	Fixed(const Fixed &other);
 	Fixed(const int n);
 	Fixed(const float n);
+	//destructor
 	~Fixed();
-	
-	//OVERLOADING OPERATORS
+	//copy assignment operator
 	Fixed &operator=(const Fixed &fp);
 	
+	//OVERLOADING OPERATORS
 	Fixed operator+(const Fixed &fp);
 	Fixed operator-(const Fixed &fp);
 	Fixed operator*(const Fixed &fp);
 	Fixed operator/(const Fixed &fp);
 	// preincrement
-	Fixed &operator++();
-	Fixed &operator--();
+	Fixed operator++();
+	Fixed operator--();
 	// postincrement
 	Fixed operator++(int);
 	Fixed operator--(int);

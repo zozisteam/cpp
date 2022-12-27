@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 11:18:35 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/12/26 15:20:49 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/12/27 15:06:59 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,23 +26,22 @@ Fixed::Fixed(const Fixed &other)
 
 Fixed::Fixed(const int n)
 {
-    // std::cout << "Int constructor called" << std::endl;
-    this->setRawBits(n);
-    return ;
+	// std::cout << "Int constructor called" << std::endl;
+	this->setRawBits(n);
+	return;
 }
 
 Fixed::Fixed(const float n)
 {
-    // std::cout << "Float constructor called" << std::endl;
-    this->setRawBits(n);
-    return ;
+	// std::cout << "Float constructor called" << std::endl;
+	this->setRawBits(n);
+	return;
 }
 
 Fixed::~Fixed()
 {
 	// std::cout << "Destructor called" << std::endl;
 }
-
 
 int Fixed::getRawBits() const
 {
@@ -64,7 +63,7 @@ void Fixed::setRawBits(float const raw)
 
 float Fixed::toFloat(void) const
 {
-	return((float)this->fp_value / (float)(1 << this->fractionalBits));
+	return ((float)this->fp_value / (float)(1 << this->fractionalBits));
 }
 
 int Fixed::toInt(void) const
@@ -72,7 +71,7 @@ int Fixed::toInt(void) const
 	return (this->fp_value >> this->fractionalBits);
 }
 
-//OVERLOADING OPERATORS
+// OVERLOADING OPERATORS
 
 Fixed &Fixed::operator=(const Fixed &other)
 {
@@ -81,10 +80,10 @@ Fixed &Fixed::operator=(const Fixed &other)
 	return *this;
 }
 
-std::ostream& operator<<(std::ostream& out, const Fixed &value)
+std::ostream &operator<<(std::ostream &out, const Fixed &value)
 {
-    out << value.toFloat();
-    return out;
+	out << value.toFloat();
+	return out;
 }
 
 Fixed Fixed::operator+(const Fixed &fp)
@@ -115,37 +114,90 @@ Fixed Fixed::operator/(const Fixed &fp)
 	return (res);
 }
 
-
-Fixed &Fixed::operator++()
+Fixed Fixed::operator++()
 {
-	this->fp_value++;
+	(this->fp_value)++;
 	return *this;
 }
 
-Fixed &Fixed::operator--()
+Fixed Fixed::operator--()
 {
-	this->fp_value--;
+	(this->fp_value)--;
 	return *this;
 }
 
-Fixed Fixed::operator++(int fp)
+Fixed Fixed::operator++(int)
 {
-	this->fp_value++;
-	return *this;
+	Fixed temp = *this;
+	(this->fp_value)++;
+	return temp;
 }
 
-Fixed Fixed::operator--(int fp)
+Fixed Fixed::operator--(int)
 {
-	this->fp_value++;
-	return *this;
+	Fixed temp = *this;
+	(this->fp_value)--;
+	return temp;
 }
 
 bool Fixed::operator>(const Fixed &fp) const
 {
-	
+	return (this->toFloat() > fp.toFloat());
 }
-	bool Fixed::operator<(const Fixed &fp) const;
-	bool Fixed::operator>=(const Fixed &fp) const;
-	bool Fixed::operator<=(const Fixed &fp) const;
-	bool Fixed::operator==(const Fixed &fp) const;
-	bool Fixed::operator!=(const Fixed &fp) const;
+
+bool Fixed::operator<(const Fixed &fp) const
+{
+	return (this->toFloat() < fp.toFloat());
+}
+
+bool Fixed::operator>=(const Fixed &fp) const
+{
+	return (this->toFloat() >= fp.toFloat());
+}
+
+bool Fixed::operator<=(const Fixed &fp) const
+{
+	return (this->toFloat() <= fp.toFloat());
+}
+
+bool Fixed::operator==(const Fixed &fp) const
+{
+	return (this->toFloat() == fp.toFloat());
+}
+
+bool Fixed::operator!=(const Fixed &fp) const
+{
+	return (this->toFloat() != fp.toFloat());
+}
+
+ Fixed Fixed::min(Fixed &fp1, Fixed &fp2)
+{
+	if (fp1 < fp2)
+		return (fp1);
+	else
+		return (fp2);
+}
+
+ Fixed Fixed::min(const Fixed &fp1, const Fixed &fp2)
+{
+	if (fp1 < fp2)
+		return (fp1);
+	else
+		return (fp2);
+}
+
+Fixed Fixed::max(Fixed &fp1, Fixed &fp2)
+{
+	if (fp1 > fp2)
+		return (fp1);
+	else
+		return (fp2);
+}
+
+Fixed Fixed::max(const Fixed &fp1, const Fixed &fp2)
+{
+	if (fp1 > fp2)
+		return (fp1);
+	else
+		return (fp2);
+}

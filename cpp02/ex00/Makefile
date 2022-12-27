@@ -3,14 +3,14 @@ FILES = main.cpp Fixed.cpp
 
 OBJ = $(FILES:.cpp=.o)
 
-FLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-CC = c++
+CXX = c++
 
 all: $(NAME) $(OBJ)
 
 $(NAME): $(OBJ)
-	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 clean:
 	rm -rf $(OBJ)

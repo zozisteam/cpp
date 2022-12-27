@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 11:33:55 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/12/23 16:25:38 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/12/27 15:29:50 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,13 @@ private:
 	static const int fractionalBits = 8;
 
 public:
+	//orthodox canonical form
 	Fixed();
 	Fixed(const Fixed &other);
 	~Fixed();
-
 	Fixed& operator=(const Fixed& fp);
+	//------------------------
+	
 	int getRawBits() const;
 	void setRawBits(int const raw);
 };

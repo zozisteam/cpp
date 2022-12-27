@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 11:18:35 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/12/26 13:13:22 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/12/27 15:51:27 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,9 @@ int Fixed::getRawBits() const
 
 void Fixed::setRawBits(int const raw)
 {
-	std::cout << "setRawBits (int) member function called" << std::endl;
+	std::cout << "setRawBits member function called" << std::endl;
 	this->fp_value = raw << this->fractionalBits;
+	this->fp_value = raw;
 }
 
 void Fixed::setRawBits(float const raw)
@@ -73,7 +74,8 @@ void Fixed::setRawBits(float const raw)
 	std::cout << "setRawBits (float) member function called" << std::endl;
 	this->fp_value = round(raw * (1 << this->fractionalBits));
 }
-
+//CHECK SET RAW BITS AND FIX IT OPTIMIZE IT TO SOMETHING UNDERSTANDABLE
+//take input and divide by 1<<bits
 float Fixed::toFloat(void) const
 {
 	return((float)this->fp_value / (float)(1 << this->fractionalBits));
