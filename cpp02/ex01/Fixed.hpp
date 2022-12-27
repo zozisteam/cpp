@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 11:33:55 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/12/26 13:13:23 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/12/26 14:23:46 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,28 +33,6 @@ public:
 
 	//OVERLOADING OPERATORS
 	Fixed& operator=(const Fixed& fp);
-	Fixed operator+(const Fixed& fp);
-	Fixed operator-(const Fixed& fp);
-	Fixed operator*(const Fixed& fp);
-	Fixed operator/(const Fixed& fp);
-	//preincrement
-	Fixed	&operator++();
-	Fixed	&operator--();
-	//postincrement
-	Fixed	operator++(int fp);
-	Fixed	operator--(int fp);
-	//bool operators
-	bool operator>(const Fixed& fp) const;
-	bool operator<(const Fixed& fp) const;
-	bool operator>=(const Fixed& fp) const;
-	bool operator<=(const Fixed& fp) const;
-	bool operator==(const Fixed& fp) const;
-	bool operator!=(const Fixed& fp) const;
-	//OVERLOADING min/max FUNCTIONS
-	static Fixed	min(Fixed &fp1, Fixed &fp2);
-	static Fixed	min(const Fixed &fp1, const Fixed &fp2);
-	static Fixed	max(Fixed &fp1, Fixed &fp2);
-	static Fixed	max(const Fixed &fp1, const Fixed &fp2);
 	
 	int getRawBits() const;
 	void setRawBits(int const raw);
