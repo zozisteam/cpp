@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 11:18:35 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/12/27 15:06:59 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/12/28 12:51:46 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -170,6 +170,9 @@ bool Fixed::operator!=(const Fixed &fp) const
 	return (this->toFloat() != fp.toFloat());
 }
 
+//A static member function can be called even if no objects
+// of the class exist and the static functions are accessed
+// using only the class name and the scope resolution operator ::
  Fixed Fixed::min(Fixed &fp1, Fixed &fp2)
 {
 	if (fp1 < fp2)

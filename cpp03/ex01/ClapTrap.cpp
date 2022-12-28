@@ -6,28 +6,21 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 20:32:54 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/12/28 15:33:27 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/12/28 15:20:46 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-Claptrap::Claptrap(): name("unnamed"), hitPoints(10), energyPoints(10), attackDamage(0) {
-	std::cout << "-default constructor called-" << std::endl;
-}
+Claptrap::Claptrap(): name("unnamed"), hitPoints(10), energyPoints(10), attackDamage(0) {}
 
-Claptrap::Claptrap(std::string name) : name(name), hitPoints(10), energyPoints(10), attackDamage(0) {
-	std::cout << "-string constructor called-" << std::endl;
-}
+Claptrap::Claptrap(std::string name) : name(name), hitPoints(10), energyPoints(10), attackDamage(0) {}
 
-Claptrap::~Claptrap(){
-	std::cout << "-destructor called-" << std::endl;
-}
+Claptrap::~Claptrap(){}
 
 
-Claptrap   &Claptrap::operator=(const Claptrap &other)
+Claptrap   Claptrap::operator=(const Claptrap &other)
 {
-	std::cout << "-assignment operator called-" << std::endl;
 	this->name = other.name;
 	this->hitPoints = other.hitPoints;
 	this->energyPoints = other.energyPoints;

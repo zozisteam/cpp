@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 11:18:35 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/12/27 15:51:27 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/12/28 12:24:18 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,12 @@ Fixed::Fixed(const int n)
 {
     std::cout << "Int constructor called" << std::endl;
     this->setRawBits(n);
-    return ;
 }
 
 Fixed::Fixed(const float n)
 {
     std::cout << "Float constructor called" << std::endl;
     this->setRawBits(n);
-    return ;
 }
 
 Fixed::~Fixed()
@@ -50,10 +48,10 @@ Fixed &Fixed::operator=(const Fixed &other)
 	return *this;
 }
 
-std::ostream& operator<<(std::ostream& out, const Fixed &value)
+std::ostream& operator<<(std::ostream& cout, const Fixed &value)
 {
-    out << value.toFloat();
-    return out;
+    cout << value.toFloat();
+    return cout;
 }
 
 int Fixed::getRawBits() const
@@ -66,16 +64,19 @@ void Fixed::setRawBits(int const raw)
 {
 	std::cout << "setRawBits member function called" << std::endl;
 	this->fp_value = raw << this->fractionalBits;
-	this->fp_value = raw;
 }
 
+
+// To convert from floating-point to fixed-point, we follow this algorithm:
+// Calculate x = floating_input * 2^(fractional_bits)
+// Round x to the nearest whole number (e.g. round(x))
+// Store the rounded x in an integer container
 void Fixed::setRawBits(float const raw)
 {
 	std::cout << "setRawBits (float) member function called" << std::endl;
 	this->fp_value = round(raw * (1 << this->fractionalBits));
 }
-//CHECK SET RAW BITS AND FIX IT OPTIMIZE IT TO SOMETHING UNDERSTANDABLE
-//take input and divide by 1<<bits
+
 float Fixed::toFloat(void) const
 {
 	return((float)this->fp_value / (float)(1 << this->fractionalBits));

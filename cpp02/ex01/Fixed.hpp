@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 11:33:55 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/12/27 15:51:08 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/12/28 12:22:37 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,6 @@ public:
 //overloading << operator
 //An overload of the insertion («) operator that inserts a floating-point representation
 // of the fixed-point number into the output stream object passed as parameter.
-std::ostream &operator<<(std::ostream &out, Fixed const &value);
+std::ostream &operator<<(std::ostream &cout, Fixed const &value);
 
 #endif

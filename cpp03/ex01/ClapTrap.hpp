@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 20:32:51 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/12/28 15:34:14 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/12/28 15:21:08 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ private:
 
 public:
 	Claptrap();
-	Claptrap(const std::string name);
 	~Claptrap();
-	Claptrap  &operator=(const Claptrap &other);
+	Claptrap(const std::string name);
+	Claptrap  operator=(const Claptrap &other);
 
 	void attack(const std::string &target);
 	void takeDamage(unsigned int amount);
