@@ -1,5 +1,5 @@
-NAME = ScavTrap
-FILES = main.cpp ClapTrap.cpp ScavTrap.cpp
+NAME = FragTrap
+FILES = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 
 OBJ = $(FILES:.cpp=.o)
 

@@ -6,61 +6,52 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 20:32:48 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/12/28 15:28:06 by alalmazr         ###   ########.fr       */
+/*   Updated: 2023/01/02 15:24:44 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main()
 {
-std::cout << std::endl;
-	std::cout << "default constructor:" << std::endl;
-	Claptrap cp1;
-	cp1.attack("some object");
-	cp1.setName("Claptrapper");
-	cp1.attack("some object");
+	std::cout << std::endl;
+	std::cout << "-- Creating ScavTrap object 'DOG' ----------" << std::endl;
+	ScavTrap test1("DOG");
+	std::cout << std::endl;
+	std::cout << "-- Creating ScavTrap object 'DoG'  ---------" << std::endl;
+	ScavTrap test2("DoG");
+	std::cout << std::endl;
+	std::cout << "-- Creating ScavTrap object test3 = test1 --" << std::endl;
+	ScavTrap test3 = test1;
+	std::cout << std::endl;
+	std::cout << "-- Creating ScavTrap object Dog ------------" << std::endl;
+	ScavTrap Dog;
 	std::cout << std::endl;
 
-	std::cout << "constructor with name:" << std::endl;
-	Claptrap cp2("Clappertrap");
-	cp2.attack("another object");
 	std::cout << std::endl;
-
-	std::cout << "copy constructor:" << std::endl;
-	Claptrap copied(cp2);
-	copied.attack("an object");
-	copied.setName("Copied");
-	copied.attack("an object");
+	std::cout << test1.getName() << " Hit Points:		" << test1.getHitPoints() << std::endl;
+	std::cout << test1.getName() << " Energy Points:	" << test1.getEnergyPoints() << std::endl;
+	std::cout << test1.getName() << " Attack Damage:	" << test1.getAttackDamage() << std::endl;
 	std::cout << std::endl;
-
-	Claptrap dog = copied;
-	dog.attack("toilet");
-	dog.setName("Dog");
-	dog.attack("toilet");
-	std::cout << std::endl;
-
-
-	std::cout << "*REAL MAIN*" << std::endl;
-	Claptrap test1("Dog");
-	Claptrap test2("Cat");
-
-	test1.attack("floor");
-	test1.takeDamage(1);
-	test1.beRepaired(2);
-	test1.attack("human");
-	test1.attack("toilet");
-	test1.attack("object");
 	
-	test1.attack("Cat");
-	test2.takeDamage(1);
-	test2.beRepaired(3);
-
-	test2.attack("Dog");
-	test1.takeDamage(10);
-	test1.beRepaired(3);
+	test1.attack("CAT");
+	std::cout << test1.getName() << " Hit Points:		" << test1.getHitPoints() << std::endl;
+	std::cout << test1.getName() << " Energy Points:	" << test1.getEnergyPoints() << std::endl;
+	std::cout << test1.getName() << " Attack Damage:	" << test1.getAttackDamage() << std::endl;
+	std::cout << std::endl;
 	
+	test1.takeDamage(50);
+	std::cout << test1.getName() << " Hit Points:		" << test1.getHitPoints() << std::endl;
+	std::cout << test1.getName() << " Energy Points:	" << test1.getEnergyPoints() << std::endl;
+	std::cout << test1.getName() << " Attack Damage:	" << test1.getAttackDamage() << std::endl;
 	std::cout << std::endl;
+	
+	test1.beRepaired(30);
+	std::cout << test1.getName() << " Hit Points:		" << test1.getHitPoints() << std::endl;
+	std::cout << test1.getName() << " Energy Points:	" << test1.getEnergyPoints() << std::endl;
+	std::cout << test1.getName() << " Attack Damage:	" << test1.getAttackDamage() << std::endl;
 	std::cout << std::endl;
+	
+	test1.guardGate();
 	std::cout << std::endl;
 }
