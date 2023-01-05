@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:46:16 by alalmazr          #+#    #+#             */
-/*   Updated: 2023/01/02 15:51:58 by alalmazr         ###   ########.fr       */
+/*   Updated: 2023/01/05 16:29:45 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,12 @@
 
  public: 
 
-     Cat(); 
+    Cat(); 
+	Cat(const Cat& other);
+	Cat &operator=(const Cat &other);
+    ~Cat(); 
 
-     ~Cat(); 
-
-     void makeSound(); 
+     void makeSound() const; 
 
  };
 

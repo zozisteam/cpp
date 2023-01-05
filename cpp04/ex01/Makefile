@@ -1,5 +1,5 @@
 NAME = animalfarm
-FILES = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongCat.cpp WrongAnimal.cpp
+FILES = main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
 
 OBJ = $(FILES:.cpp=.o)
 
