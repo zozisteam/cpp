@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:47:43 by alalmazr          #+#    #+#             */
-/*   Updated: 2023/01/09 10:12:54 by alalmazr         ###   ########.fr       */
+/*   Updated: 2023/01/06 18:20:35 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 int main()
 {
 	std::vector<Animal *> animals;
-
+	// Animal animal;
 	for (int i = 0; i < 3; i++)
 	{
 		std::cout << i << ": ";

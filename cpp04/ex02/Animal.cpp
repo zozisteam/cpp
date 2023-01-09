@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:45:29 by alalmazr          #+#    #+#             */
-/*   Updated: 2023/01/06 18:24:50 by alalmazr         ###   ########.fr       */
+/*   Updated: 2023/01/06 18:19:14 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Animal::Animal() {
     std::cout << "Animal constructor called" << std::endl;
-    type = "some animal";
+    type = "";
 }
 
 Animal::~Animal() {
@@ -33,11 +33,11 @@ Animal  &Animal::operator=(const Animal &other)
 	return *this;
 }
 
-void		Animal::makeSound() const
-{
-	std::cout << "ooga booga" << std::endl;
-	return ;
-}
+// void		Animal::makeSound() const
+// {
+// 	std::cout << "ooga booga" << std::endl;
+// 	return ;
+// }
 
 void Animal::setType(std::string type)
 {
