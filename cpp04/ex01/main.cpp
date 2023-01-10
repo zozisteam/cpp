@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:47:43 by alalmazr          #+#    #+#             */
-/*   Updated: 2023/01/09 10:12:54 by alalmazr         ###   ########.fr       */
+/*   Updated: 2023/01/09 10:22:58 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 #include "Dog.hpp"
 #include <vector>
 
+
+//"vector" is a sequence container that represents an
+// array that can change in size. Vectors are implemented
+// as dynamic arrays, which means that they can grow 
+//or shrink as needed to accommodate the insertion or removal 
+//of elements.
 int main()
 {
 	std::vector<Animal *> animals;
