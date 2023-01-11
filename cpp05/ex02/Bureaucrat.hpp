@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 09:03:59 by alalmazr          #+#    #+#             */
-/*   Updated: 2023/01/11 16:22:28 by alalmazr         ###   ########.fr       */
+/*   Updated: 2023/01/11 16:13:56 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <iostream>
 #include <exception>
+#include "AForm.hpp"
+class AForm;
 
 class Bureaucrat
 {
@@ -22,12 +24,7 @@ private:
 	const std::string name;
 	int grade;
 
-	Bureaucrat();
-
 public:
-	// custom exception class that inherits from the
-	//  std::exception class. It overrides the what()
-	// method and returns a string message "Grade too low" when called.
 	class GradeTooHighException : public std::exception
 	{
 	public:
@@ -46,8 +43,8 @@ public:
 		}
 	};
 
+	Bureaucrat();
 	Bureaucrat(std::string name, int grade);
-	Bureaucrat(const Bureaucrat &other);
 	Bureaucrat &operator=(const Bureaucrat &other);
 	~Bureaucrat();
 
@@ -56,6 +53,8 @@ public:
 
 	void incrementGrade();
 	void decrementGrade();
+	void signForm(AForm &f);
+	void executeForm(const AForm &f) const;
 };
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &b);
 
