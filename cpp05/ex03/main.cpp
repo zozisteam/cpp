@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 15:07:23 by mraspors          #+#    #+#             */
-/*   Updated: 2023/01/11 16:25:19 by alalmazr         ###   ########.fr       */
+/*   Updated: 2023/01/12 19:42:22 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int main()
 	std::cout << std::endl
 			  << std::endl;
 	{
-		form = someRandomIntern.makeForm("robotomy request", "home");
+		form = someRandomIntern.makeForm("robotomy request", "planet");
 		if (form)
 		{
 			try
@@ -47,7 +47,7 @@ int main()
 			  << std::endl;
 	{
 		// Test "shrubbery request" form
-		form = someRandomIntern.makeForm("shrubbery request", "Bender");
+		form = someRandomIntern.makeForm("shrubbery request", "home");
 		if (form)
 		{
 			try

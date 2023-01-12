@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 09:31:33 by alalmazr          #+#    #+#             */
-/*   Updated: 2023/01/11 16:07:54 by alalmazr         ###   ########.fr       */
+/*   Updated: 2023/01/12 19:33:52 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,19 @@ Form::Form(std::string name, int gradetoSign, int gradetoExec) : name(name), isS
 	}
 }
 
-//  Form::Form(const Form& other)
-//  {
+Form &Form::operator=(const Form &other)
+{
+	//const vars cant be overwritted
+	this->isSigned = other.isSigned;
+	return (*this);
+}
 
-//  }
+Form::Form(const Form& other): name(other.getName()), gradetoSign(other.getGradeToSign()), 
+                             gradetoExec(other.getGradeToExecute())
+{
+	this->isSigned = false;
+	return ;
+}
 
 Form::~Form() {}
 

@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 09:03:59 by alalmazr          #+#    #+#             */
-/*   Updated: 2023/01/11 16:13:56 by alalmazr         ###   ########.fr       */
+/*   Updated: 2023/01/12 19:38:22 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ public:
 
 	Bureaucrat();
 	Bureaucrat(std::string name, int grade);
+	Bureaucrat(const Bureaucrat& other);
 	Bureaucrat &operator=(const Bureaucrat &other);
 	~Bureaucrat();
 

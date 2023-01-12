@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 09:04:32 by alalmazr          #+#    #+#             */
-/*   Updated: 2023/01/11 16:04:51 by alalmazr         ###   ########.fr       */
+/*   Updated: 2023/01/12 19:37:36 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void Bureaucrat::decrementGrade()
 
 void Bureaucrat::signForm(Form &f)
 {
-	if (f.getIsSigned())
+	if (f.getIsSigned() && this->grade <= f.getGradeToSign())
 	{
 		std::cout << this->name << " signed " << f.getName() << std::endl;
 	}

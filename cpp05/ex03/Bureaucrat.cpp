@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 09:04:32 by alalmazr          #+#    #+#             */
-/*   Updated: 2023/01/11 12:36:34 by alalmazr         ###   ########.fr       */
+/*   Updated: 2023/01/12 19:31:06 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,21 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : name(name) {
     }
 }
 
-Bureaucrat::~Bureaucrat() {}
-
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 {
 	this->grade = other.getGrade();
 	// this->name = other.getName(); //cant be copied cz const
 	return *this;
 }
+
+Bureaucrat::Bureaucrat(const Bureaucrat& other): name(other.getName())
+{
+	this->grade = other.grade;
+	return ;
+}
+
+Bureaucrat::~Bureaucrat() {}
+
 
 std::string Bureaucrat::getName() const {
     return this->name;
