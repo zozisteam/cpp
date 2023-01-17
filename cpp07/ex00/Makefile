@@ -1,6 +1,5 @@
-NAME = Base
-
-FILES = main.cpp Base.cpp A.cpp B.cpp C.cpp
+NAME = templates
+FILES = main.cpp
 
 OBJ = $(FILES:.cpp=.o)
 

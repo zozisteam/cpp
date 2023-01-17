@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 19:57:35 by mraspors          #+#    #+#             */
-/*   Updated: 2023/01/12 16:58:43 by alalmazr         ###   ########.fr       */
+/*   Updated: 2023/01/17 18:36:42 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 class Converter {
 private:
 	std::string input;
-	bool		floatPseudo;
-	bool		doublPseudo;
+	bool		ndefFloat;
+	bool		ndefDouble;
 	bool		isChar;
 	bool		isInt;
 	bool		isDouble;
@@ -30,8 +30,8 @@ private:
 	char		c;
 	int			num;
 	float		f;
-	double		dub;
-	int			impos;
+	double		d;
+	int			impossible;
 	Converter();
 	
 public:

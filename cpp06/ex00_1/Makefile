@@ -1,15 +1,18 @@
-NAME = convert
-FILES = main.cpp Converter.cpp 
+
+NAME = Convert
+
+FILES = main.cpp
+
 OBJ = $(FILES:.cpp=.o)
 
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
-CXX = c++
+CC = c++
 
 all: $(NAME) $(OBJ)
 
 $(NAME): $(OBJ)
-	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
+	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 
 clean:
 	rm -rf $(OBJ)

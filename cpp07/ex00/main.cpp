@@ -5,36 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/17 20:35:59 by mraspors          #+#    #+#             */
-/*   Updated: 2023/01/16 17:34:51 by alalmazr         ###   ########.fr       */
+/*   Created: 2023/01/17 19:04:31 by alalmazr          #+#    #+#             */
+/*   Updated: 2023/01/17 19:22:59 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Data.hpp"
+#include "whatever.hpp"
 #include <iostream>
 
-uintptr_t	serialize(Data *ptr)
+int main()
 {
-	return reinterpret_cast<uintptr_t>(ptr);
-}
-
-Data	*deserialize(uintptr_t raw)
-{
-	return reinterpret_cast<Data *>(raw);
-}
-
-int main(void)
-{
-	Data *data = new Data;
-	Data *deSerData;
-	uintptr_t ser;
-
-	data->str = "lol";
-	std::cout << "Original data     : " << data->str << std::endl;
-	ser = serialize(data);
-	std::cout << "Serialized data   : " << ser << std::endl;
-	deSerData = deserialize(ser);
-	std::cout << "Deserialized data: " << deSerData->str << std::endl;
-	delete data;
-	return 0;
+	// int result1;
+    
+	int a = 5, b = 10;
+	std::cout << "a: " << a << "  b: " << b << std::endl;
+	swap<int>(a, b);
+	std::cout << "swap function called on a and b" << std::endl;
+	std::cout << "a: " << a << "  b: " << b << std::endl;
+	std::cout << min<int>(a, b) << std::endl;
+	std::cout << max<int>(a, b) << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 19:58:03 by mraspors          #+#    #+#             */
-/*   Updated: 2023/01/12 17:52:00 by alalmazr         ###   ########.fr       */
+/*   Updated: 2023/01/17 18:38:48 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ Converter::Converter(char *input)
 			  << std::endl;
 	std::string temp(input);
 	this->input = temp;
-	this->floatPseudo = false;
-	this->doublPseudo = false;
+	this->ndefFloat = false;
+	this->ndefDouble = false;
 	this->isChar = false;
 	this->isInt = false;
 	this->isDouble = false;
@@ -35,9 +35,9 @@ Converter::Converter(char *input)
 	this->type = 0;
 	this->num = 0;
 	this->c = '0';
-	this->dub = 0;
+	this->d = 0;
 	this->f = 0;
-	this->impos = 0;
+	this->impossible = 0;
 	return;
 }
 
@@ -45,8 +45,8 @@ Converter::Converter(const Converter &src)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	this->input = src.input;
-	this->floatPseudo = src.floatPseudo;
-	this->doublPseudo = src.doublPseudo;
+	this->ndefFloat = src.ndefFloat;
+	this->ndefDouble = src.ndefDouble;
 	this->isChar = src.isChar;
 	this->isInt = src.isInt;
 	this->isDouble = src.isDouble;
@@ -54,9 +54,9 @@ Converter::Converter(const Converter &src)
 	this->type = src.type;
 	this->num = src.num;
 	this->c = src.c;
-	this->dub = src.dub;
+	this->d = src.d;
 	this->f = src.f;
-	this->impos = src.impos;
+	this->impossible = src.impossible;
 	return;
 }
 
@@ -64,8 +64,8 @@ Converter &Converter::operator=(const Converter &src)
 {
 	std::cout << "Assigment operator called" << std::endl;
 	this->input = src.input;
-	this->floatPseudo = src.floatPseudo;
-	this->doublPseudo = src.doublPseudo;
+	this->ndefFloat = src.ndefFloat;
+	this->ndefDouble = src.ndefDouble;
 	this->isChar = src.isChar;
 	this->isInt = src.isInt;
 	this->isDouble = src.isDouble;
@@ -73,9 +73,9 @@ Converter &Converter::operator=(const Converter &src)
 	this->type = src.type;
 	this->num = src.num;
 	this->c = src.c;
-	this->dub = src.dub;
+	this->d = src.d;
 	this->f = src.f;
-	this->impos = src.impos;
+	this->impossible = src.impossible;
 	return (*this);
 }
 
@@ -115,12 +115,12 @@ bool Converter::checkSpecial()
 	{
 		if (this->input == floatSpecila[i])
 		{
-			this->floatPseudo = true;
+			this->ndefFloat = true;
 			return true;
 		}
 		if (this->input == doubleSpecial[i])
 		{
-			this->doublPseudo = true;
+			this->ndefDouble = true;
 			return true;
 		}
 	}
@@ -130,7 +130,7 @@ bool Converter::checkSpecial()
 void Converter::checkTypeValidity()
 {
 	int count = 0;
-	bool ar[6] = {this->floatPseudo, this->doublPseudo, this->isChar, this->isInt, this->isDouble, this->isFloat};
+	bool ar[6] = {this->ndefFloat, this->ndefDouble, this->isChar, this->isInt, this->isDouble, this->isFloat};
 	for (int i = 0; i < 6; i++)
 	{
 		if (ar[i] == true)
@@ -161,9 +161,9 @@ void Converter::checkInput()
 
 void Converter::pickType()
 {
-	if (this->floatPseudo == true)
+	if (this->ndefFloat == true)
 		this->type = 1;
-	else if (this->doublPseudo == true)
+	else if (this->ndefDouble == true)
 		this->type = 2;
 	else if (this->isChar == true)
 		this->type = 3;
@@ -191,7 +191,7 @@ void Converter::convertToType(int type)
 		catch (const std::exception &e)
 		{
 			this->type = 5;
-			this->impos = 1;
+			this->impossible = 1;
 			this->convertToType(5);
 		}
 	}
@@ -204,7 +204,7 @@ void Converter::convertToType(int type)
 		catch (const std::exception &e)
 		{
 			this->type = 6;
-			this->impos = 2;
+			this->impossible = 2;
 			this->convertToType(6);
 		}
 	}
@@ -212,7 +212,7 @@ void Converter::convertToType(int type)
 	{
 		try
 		{
-			this->dub = std::stod(this->input);
+			this->d = std::stod(this->input);
 		}
 		catch (const std::exception &e)
 		{
@@ -252,7 +252,7 @@ void Converter::printIfSpecial(int type)
 
 void Converter::printChar(int type)
 {
-	if (this->impos >= 1)
+	if (this->impossible >= 1)
 	{
 		std::cout << "char  : impossible" << std::endl;
 		return;
@@ -265,8 +265,7 @@ void Converter::printChar(int type)
 	else if (type == 5)
 		n = int(this->f);
 	else if (type == 6)
-		n = int(this->dub);
-	printf("Print char: %d\n", n);
+		n = int(this->d);
 	if (n >= 32 && n <= 126)
 		std::cout << "char  : " << static_cast<char>(n) << std::endl;
 	else
@@ -276,7 +275,7 @@ void Converter::printChar(int type)
 
 void Converter::printInt(int type)
 {
-	if (this->impos >= 1)
+	if (this->impossible >= 1)
 	{
 		std::cout << "int   : impossible" << std::endl;
 		return;
@@ -294,7 +293,7 @@ void Converter::printInt(int type)
 		std::cout << static_cast<int>(this->f);
 		break;
 	case 6:
-		std::cout << static_cast<int>(this->dub);
+		std::cout << static_cast<int>(this->d);
 		break;
 	}
 	std::cout << std::endl;
@@ -303,7 +302,7 @@ void Converter::printInt(int type)
 void Converter::printFloat(int type)
 {
 	// Check if value is impossible to convert
-	if (this->impos == 2)
+	if (this->impossible == 2)
 	{
 		std::cout << "float : impossible" << std::endl;
 		return;
@@ -338,7 +337,7 @@ void Converter::printFloat(int type)
 		std::cout << this->f;
 		break;
 	case 6:
-		std::cout << static_cast<float>(this->dub);
+		std::cout << static_cast<float>(this->d);
 		break;
 	}
 
@@ -384,7 +383,7 @@ void Converter::printDouble(int type)
 		std::cout << static_cast<double>(this->f);
 		break;
 	case 6:
-		std::cout << (this->dub);
+		std::cout << (this->d);
 		break;
 	}
 
