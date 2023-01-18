@@ -6,14 +6,9 @@
 #include <iostream>
 #include <iomanip>
 
-// Function to set up the output for the type being printed
-void coutSetup(const char* type) {
-    std::cout << std::setw(13) << type << ": " << std::right;
-}
-
-// Function to print char values
+//print char values
 void charPrint(double value) {
-    coutSetup("char");
+	std::cout << "char	:" << std::right;
     // Check if value is in range for char
     if (isinf(value) || isnan(value) || value > std::numeric_limits<char>::max()
             || value < std::numeric_limits<char>::min())
@@ -26,9 +21,9 @@ void charPrint(double value) {
     std::cout << std::endl;
 }
 
-// Function to print int values
+//print int values
 void intPrint(double value) {
-    coutSetup("int");
+	std::cout << "int	:" << std::right;
     // Check if value is in range for int
     if (isinf(value) || isnan(value) || value > std::numeric_limits<int>::max()
             || value < std::numeric_limits<int>::min())
@@ -40,11 +35,11 @@ void intPrint(double value) {
 
 // Function to print float values
 void floatPrint(double value, int prec) {
-    coutSetup("float");
-    // Check if value is in range for float
-    if (!isinf(value) && !isnan(value) && value
-            && (value < -std::numeric_limits<float>::max()|| (value > -std::numeric_limits<float>::min()
-            && value < std::numeric_limits<float>::min()) || value > std::numeric_limits<float>::max()))
+    std::cout << "float	:" << std::right;
+    //checks if the value is not infinite, not a NaN, and is within the range of the float data type.
+    if (!isinf(value) && !isnan(value) && value && 
+		(value < -std::numeric_limits<float>::max()|| (value > -std::numeric_limits<float>::min() && 
+		value < std::numeric_limits<float>::min()) || value > std::numeric_limits<float>::max()))
         std::cout << "impossible";
     else
         std::cout << std::setprecision(prec) << std::fixed << static_cast<float>(value) << 'f';
@@ -53,7 +48,7 @@ void floatPrint(double value, int prec) {
 
 // Function to print double values
 void doublePrint(double value, int prec) {
-    coutSetup("double");
+    std::cout << "double	:" << std::right;
     std::cout << std::setprecision(prec) << std::fixed << value << std::endl;
 }
 
@@ -63,27 +58,27 @@ void end(int rc) {
     exit(rc);
 }
 
-void _forScience(std::string const &arg)
+void nanPrint(std::string const &arg)
 {
-	coutSetup("char");
+	std::cout << "char	:" << std::right;
 	std::cout << "impossible" << std::endl;
-	coutSetup("int");
+	std::cout << "int	:" << std::right;
 	std::cout << "impossible" << std::endl;
-	coutSetup("float");
+	std::cout << "float	:" << std::right;
 	std::cout << arg << std::endl;
-	coutSetup("double");
+	std::cout << "double	:" << std::right;
 	std::cout << arg.substr(0, arg.length() - 1) << std::endl;
 	exit(0);
 }
 
-void forScience(std::string const &str)
+void nanZ(std::string const &str)
 {
 	if (str == "nanf" || str == "+nanf" || str == "-nanf")
-		_forScience("nanf");
+		nanPrint("nanf");
 	if (str == "+inff" || str == "inff")
-		_forScience("inff");
+		nanPrint("inff");
 	if (str == "-inff")
-		_forScience("-inff");
+		nanPrint("-inff");
 }
 
 int main(int argc, char *argv[])
@@ -119,7 +114,7 @@ int main(int argc, char *argv[])
 	else if (str.length() == 1)
 		value = argv[1][0];
 	else if (str == "nanf" || str == "+nanf" || str == "-nanf" || str == "+inff" || str == "inff" || str == "-inff")
-		forScience(str);
+		nanZ(str);
 	else
 		end(1);
 	charPrint(value);
@@ -128,3 +123,23 @@ int main(int argc, char *argv[])
 	doublePrint(value, prec);
 	return (0);
 }
+
+// The main function of the program starts by checking if the number of command line arguments passed is equal to 2. If not, it prints an error message "bad input" and exits the program with a return code of 1.
+
+// Next, it declares a variable idx of type char* and a string variable str which is initialized with the first command line argument.
+
+// It then checks if the input string is equal to "nanf", "+nanf", "-nanf" and if it's true it calls the function nanPrint() and passes the input string as an argument, the function nanPrint() then prints "impossible" for the char and int, and the passed string as the value for float and double, and exits the program with a return code of 0.
+
+// It then checks if the input string is equal to "+inff", "inff" and if it's true it calls the function nanPrint() and passes the input string as an argument, the function nanPrint() then prints "impossible" for the char and int, and the passed string as the value for float and double, and exits the program with a return code of 0.
+
+// It then checks if the input string is equal to "-inff" and if it's true it calls the function nanPrint() and passes the input string as an argument, the function nanPrint() then prints "impossible" for the char and int, and the passed string as the value for float and double, and exits the program with a return code of 0.
+
+// After that, it converts the input string to a double using the strtod() function, which converts a string to a double value and assigns the result to the value variable.
+
+// Then it calls the function charPrint(value) to print the char value, the function intPrint(value) to print the int value, the function floatPrint(value,6) to print the float value, and the function doublePrint(value,6) to print the double value.
+
+// And that's the main part of the program.
+
+
+
+
