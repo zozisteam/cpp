@@ -5,38 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/17 19:17:53 by alalmazr          #+#    #+#             */
-/*   Updated: 2023/01/18 19:22:08 by alalmazr         ###   ########.fr       */
+/*   Created: 2023/01/18 19:23:10 by alalmazr          #+#    #+#             */
+/*   Updated: 2023/01/18 20:02:24 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-template <typename T>
-void swap(T *parameter1, T *parameter2)
-{
-	T tmp;
-	tmp = *parameter1;
-	*parameter1 = *parameter2;
-	*parameter2 = tmp;
-}
+#ifndef WHATEVER_HPP
+# define WHATEVER_HPP
 
 template <typename T>
-T min(T parameter1, T parameter2)
+void iter(T *arr, int size, void (*f)(T &) )
 {
-	if (parameter1 == parameter2)
-		return parameter2;
-	else if (parameter1 > parameter2)
-		return parameter2;
-	else
-		return parameter1;
+	for (int i = 0; i < size; i++)
+		f(arr[i]);
 }
 
-template <typename T>
-T max(T parameter1, T parameter2)
-{
-	if (parameter1 == parameter2)
-		return parameter2;
-	else if (parameter1 > parameter2)
-		return parameter1;
-	else
-		return parameter2;
-}
+#endif
