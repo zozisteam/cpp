@@ -1,7 +1,7 @@
 
 NAME = Convert
 
-FILES = main.cpp  Converter.cpp
+FILES = main.cpp
 
 OBJ = $(FILES:.cpp=.o)
 

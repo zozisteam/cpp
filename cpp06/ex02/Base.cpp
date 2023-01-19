@@ -3,16 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   Base.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mraspors <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 04:37:27 by mraspors          #+#    #+#             */
-/*   Updated: 2022/12/18 04:40:04 by mraspors         ###   ########.fr       */
+/*   Updated: 2023/01/19 17:12:10 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Base.hpp"
 
-Base::~Base()
-{
-    return ;
-}
+Base::~Base(){}

@@ -3,37 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   A.cpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mraspors <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/18 04:06:24 by mraspors          #+#    #+#             */
-/*   Updated: 2022/12/18 04:09:45 by mraspors         ###   ########.fr       */
+/*   Created: 2023/01/19 16:50:33 by alalmazr          #+#    #+#             */
+/*   Updated: 2023/01/19 17:18:07 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "A.hpp"
 
-A::A()
-{
-	std::cout << "[A] Default constructor called" << std::endl;
-	return;
-}
+A::A(){}
 
-A::A(const A &src)
-{
-	std::cout << "[A] Copy constructor called" << std::endl;
-	*this = src;
-	return;
-}
 
-A &A::operator=(const A &src)
-{
-	(void)src;
-	std::cout << "[A] assignement operator called" << std::endl;
-	return *this;
-}
-
-A::~A( void )
-{
-	return;
-}
+A::~A( void ){}
 

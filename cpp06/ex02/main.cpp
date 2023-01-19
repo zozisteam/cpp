@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mraspors <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/17 20:35:59 by mraspors          #+#    #+#             */
-/*   Updated: 2022/12/18 04:41:54 by mraspors         ###   ########.fr       */
+/*   Created: 2023/01/19 17:27:21 by alalmazr          #+#    #+#             */
+/*   Updated: 2023/01/19 17:33:50 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include <iostream>
 #include <cstdlib>
@@ -20,22 +21,21 @@
 Base *generate(void)
 {
 	Base	*ptr;
-	int		rd = std::rand() % 3;
-	switch(rd)
+	switch(std::rand()%4)
 	{
-		case 0:
-			ptr = new A();
-			return ptr;
 		case 1:
-			ptr = new B();
-			return ptr;
+			ptr = new A();
+			break;
 		case 2:
+			ptr = new B();
+			break;
+		case 3:
 			ptr = new C();
-			return ptr;
+			break;
 		default:
 			ptr = new A();
-			return ptr;
 	}
+		return ptr;
 }
 
 void identify(Base &p)
@@ -86,20 +86,10 @@ void identify(Base *p)
 		std::cout << "C" << std::endl;
 }
 
-// The dynamic_cast keyword casts a datum from one pointer or reference type 
-// to another, performing a runtime check to ensure the validity of the cast.
-// If you attempt to cast to pointer to a type that is not a type of   actual 
-// object, the result of the cast will be NULL. If you  attempt  to  cast  to 
-// reference to a type that is not a type of actual  object,  the  cast  will 
-// throw a bad_cast exception.
-
 int main()
 {
 	Base	*base;
 
-	std::cout << "================================================================" << std::endl;
-	std::cout << "Check using pointers" << std::endl;
-	std::cout << std::endl;
 	base = generate();
 	identify(base);
 	delete base;
@@ -116,23 +106,7 @@ int main()
 	identify(base);
 	delete base;
 
-	base = generate();
-	identify(base);
-	delete base;
-
-	base = generate();
-	identify(base);
-	delete base;
-	std::cout << "================================================================" << std::endl;
-	std::cout << std::endl;
-	std::cout << std::endl;
-
-	std::cout << "================================================================" << std::endl;
-	std::cout << std::endl << "Check using references" << std::endl;
-	std::cout << std::endl;
-	base = generate();
-	identify(*base);
-	delete base;
+	std::cout << std::endl <<std::endl;
 
 	base = generate();
 	identify(*base);
@@ -150,9 +124,5 @@ int main()
 	identify(*base);
 	delete base;
 
-	base = generate();
-	identify(*base);
-	delete base;
-	std::cout << "================================================================" << std::endl;
 	return 0;
 }

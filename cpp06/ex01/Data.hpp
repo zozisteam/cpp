@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   Data.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mraspors <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 19:57:35 by mraspors          #+#    #+#             */
-/*   Updated: 2022/12/18 03:49:42 by mraspors         ###   ########.fr       */
+/*   Created: 2023/01/19 17:39:06 by alalmazr          #+#    #+#             */
+/*   Updated: 2023/01/19 17:39:09 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef DATA_HPP
 # define DATA_HPP

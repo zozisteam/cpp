@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   B.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mraspors <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 04:03:15 by mraspors          #+#    #+#             */
-/*   Updated: 2022/12/18 04:11:53 by mraspors         ###   ########.fr       */
+/*   Updated: 2023/01/19 17:13:15 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@
 class B: public Base{
 public:
 	B();
-	B(const B &src);
 	~B();
-	B	&operator=(const B &src);
 };
 #endif
