@@ -68,7 +68,8 @@
 		"stack": "cpp",
 		"__functional_base_03": "cpp",
 		"filesystem": "cpp",
-		"thread": "cpp"
+		"thread": "cpp",
+		"memory_resource": "cpp"
 	},
 	"C_Cpp.errorSquiggles": "Disabled"
 }

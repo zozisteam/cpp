@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 19:04:31 by alalmazr          #+#    #+#             */
-/*   Updated: 2023/01/18 19:30:54 by alalmazr         ###   ########.fr       */
+/*   Updated: 2023/01/20 10:27:19 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,18 @@ int main()
 	// std::cout << max<int>(a, b) << std::endl;
 		int a = 2;
 	int b = 3;
-	swap( &a, &b );
+	::swap( &a, &b );
 	std::cout << "a = " << a << ", b = " << b << std::endl;
 	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
 	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
 	std::string c = "chaine1";
 	std::string d = "chaine2";
-	swap(&c, &d);
+	::swap(&c, &d);
 	std::cout << "c = " << c << ", d = " << d << std::endl;
 	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
 	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
 
-	std::cout << "----------------------------" << std::endl;
+	std::cout << std::endl;
 
 	float floatA = 3.5;
 	float floatB = 2.9;

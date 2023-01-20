@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 19:32:32 by alalmazr          #+#    #+#             */
-/*   Updated: 2023/01/18 20:02:49 by alalmazr         ###   ########.fr       */
+/*   Updated: 2023/01/20 10:30:34 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,21 @@ void inc(int &n)
 int main( void ) 
 {
 	std::string str[5] = { "Blue", "Red", "Orange", "Yellow", "Black"};
-	int			ar[5] = {1, 2, 3, 4, 5};
+	std::cout << "call [iter(str, 5, &print)]" << std::endl;
 	::iter(str, 5, &print);
-	
+	std::cout << "end [iter(str, 5, &print)]" << std::endl;
 	std::cout << std::endl;
-	std::cout << "Before iter call for int array" << std::endl;
+	
+
+	int	ar[5] = {1, 2, 3, 4, 5};
+	std::cout << "int ar[5]: " ;
 	for (int i = 0; i < 5; i++)
 		std::cout << ar[i] << " ";
 	std::cout << std::endl;
+	std::cout << "call [iter(ar, 5, &inc)]" << std::endl;
 	::iter(ar, 5, &inc);
-	std::cout << "After iter call for int array" << std::endl;
+	std::cout << "end [iter(ar, 5, &inc)]" << std::endl;
+	std::cout << "int ar[5]: " ;
 	for (int i = 0; i < 5; i++)
 		std::cout << ar[i] << " ";
 	std::cout << std::endl;
