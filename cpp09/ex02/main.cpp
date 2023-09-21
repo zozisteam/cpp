@@ -45,7 +45,8 @@ int main(int argc, char **argv)
 		pm.fdj_algo_vect();
 		fin = clock();
 		// list
-		//  t2 = clock();        // push_list();
+		//  t2 = clock();        
+		// push_list();
 		//  fdj_algo_list();
 		//  fin2 = clock();
 		std::cout << "Time to process a range of"
