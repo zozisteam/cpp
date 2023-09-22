@@ -15,15 +15,16 @@ bool IsPositiveInteger(char **argv, int argc)
 }
 int main(int argc, char **argv)
 {
+	std::cout << argc << std::endl;
 	clock_t start, fin;
 	try
 	{
 		if (argc < 2)
 			throw std::invalid_argument("Usage: PmergeMe <positive_integer_sequence>");
 		if (IsPositiveInteger(argv, argc) == false)
-			throw std::invalid_argument("invalid");
+			throw std::invalid_argument("Usage: PmergeMe <positive_integer_sequence>");
 		std::cout << "Before : ";
-		if (argc < 6)
+		if (argc < 7)
 		{
 			for (int i = 1; i < argc; i++)
 			{
@@ -32,7 +33,7 @@ int main(int argc, char **argv)
 		}
 		else
 		{
-			for (size_t i = 1; i < 5; i++)
+			for (size_t i = 1; i < 6; i++)
 			{
 				std::cout << argv[i] << " ";
 			}
@@ -44,14 +45,15 @@ int main(int argc, char **argv)
 		pm.push_vect();
 		pm.fdj_algo_vect();
 		fin = clock();
-		// list
-		//  t2 = clock();        
-		// push_list();
-		//  fdj_algo_list();
-		//  fin2 = clock();
 		std::cout << "Time to process a range of"
 				  << " " << argc - 1 << " elements with std::[vector] : " << (double)(fin - start) << "us" << std::endl;
-		// std::cout << "Time to process a range of"        //        << " " << argc - 1 << " elements with std::[deque] : " << (double)(fin2 - t2) << "us" << std::endl;
+		// list
+		start = clock();
+		pm.push_list();
+		pm.fdj_algo_list();
+		fin = clock();
+		std::cout << "Time to process a range of"
+				  << " " << argc - 1 << " elements with std::[list] : " << (double)(fin - start) << "us" << std::endl;
 	}
 	catch (const std::exception &e)
 	{

@@ -9,15 +9,15 @@
 #include <unistd.h>
 
 typedef std::vector<std::pair<int, int> > vector;
-typedef std::list<std::pair<int, int> > list;
+typedef std::list<int> list;
 class PmergeMe
 {
 private:
 	vector vector;
 	list list;
 	char **str;
-	clock_t t1, fin1;
-	clock_t t2, fin2;
+	// clock_t t1, fin1;
+	// clock_t t2, fin2;
 
 public:
 	PmergeMe();
@@ -25,8 +25,10 @@ public:
 	~PmergeMe();
 	PmergeMe(PmergeMe const &other);
 	PmergeMe &operator=(PmergeMe const &other);
+	
 	void push_vect();
 	void fdj_algo_vect();
+
 	void push_list();
 	void fdj_algo_list();
 };
